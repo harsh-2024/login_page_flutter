@@ -26,6 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
+  final _formKey2 = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +67,16 @@ class _HomePageState extends State<HomePage> {
                       }
                     }),
               ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     if (_formKey.currentState!.validate()) {
+              //       ScaffoldMessenger.of(context).showSnackBar(
+              //         const SnackBar(content: Text('Processing Data')),
+              //       );
+              //     }
+              //   },
+              //   child: const Text('Submit'),
+              // ),
               Container(
                 margin: EdgeInsets.only(left: 50, right: 30, top: 15),
                 child: TextFormField(
@@ -74,8 +85,26 @@ class _HomePageState extends State<HomePage> {
                       border: UnderlineInputBorder(),
                       hintText: 'Password',
                       hintStyle: TextStyle(color: Colors.grey)),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter password';
+                    }
+                  },
                 ),
-              )
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 290),
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
+                  child: const Text('Submit'),
+                ),
+              ),
             ],
           )),
         ],
