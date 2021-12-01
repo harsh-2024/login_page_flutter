@@ -1,6 +1,11 @@
 import 'dart:ui';
 
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:email_validator/email_validator.dart';
+
+TextEditingController controller = TextEditingController();
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
@@ -56,16 +61,23 @@ class _HomePageState extends State<HomePage> {
               Container(
                 margin: EdgeInsets.only(left: 50, right: 30),
                 child: TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        border: UnderlineInputBorder(),
-                        hintText: 'Email Address',
-                        hintStyle: TextStyle(color: Colors.grey)),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter Your Email Address';
-                      }
-                    }),
+                  controller: controller,
+                  keyboardType: TextInputType.emailAddress,
+                  // inputFormatters: [
+                  //   FilteringTextInputFormatter.allow(EmailValidationPage())),
+
+                  // ],
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      icon: Icon(Icons.email_outlined),
+                      border: UnderlineInputBorder(),
+                      hintText: 'Email Address',
+                      hintStyle: TextStyle(color: Colors.grey)),
+                  validator: (email) =>
+                      email != null && !EmailValidator.validate(email)
+                          ? 'Enter a valide email'
+                          : null,
+                ),
               ),
               // ElevatedButton(
               //   onPressed: () {
@@ -82,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                 child: TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
+                      icon: Icon(Icons.password_rounded),
                       border: UnderlineInputBorder(),
                       hintText: 'Password',
                       hintStyle: TextStyle(color: Colors.grey)),
@@ -97,6 +110,7 @@ class _HomePageState extends State<HomePage> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
+                      final email = controller.text;
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Processing Data')),
                       );
@@ -106,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 20 ,
+                height: 20,
               ),
               Container(
                 child: Column(
@@ -124,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                     Center(child: Text('Sign Up using')),
                     SizedBox(
                       height: 20,
-                    )
+                    ),
                     Center(
                       child: Image(
                         image: AssetImage('images/ggl.png'),
