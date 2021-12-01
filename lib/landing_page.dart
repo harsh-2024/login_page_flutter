@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
-  final _formKey2 = GlobalKey<FormState>();
+  // final _formKey2 = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +103,36 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   child: const Text('Submit'),
+                ),
+              ),
+              SizedBox(
+                height: 20 ,
+              ),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      child: Divider(
+                        color: Colors.black,
+                        // height: 75,
+                        indent: 80,
+                        endIndent: 80,
+                      ),
+                    ),
+                    SizedBox(height: 4.0),
+                    Center(child: Text('Sign Up using')),
+                    SizedBox(
+                      height: 20,
+                    )
+                    Center(
+                      child: Image(
+                        image: AssetImage('images/ggl.png'),
+                        height: 50,
+                        width: 50,
+                      ),
+                    )
+                  ],
                 ),
               ),
             ],
