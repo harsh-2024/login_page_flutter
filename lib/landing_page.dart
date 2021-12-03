@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:email_validator/email_validator.dart';
 
 TextEditingController controller = TextEditingController();
 
@@ -112,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                     if (_formKey.currentState!.validate()) {
                       final email = controller.text;
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Processing Data')),
+                        SnackBar(content: Text('Your Email is $email')),
                       );
                     }
                   },
