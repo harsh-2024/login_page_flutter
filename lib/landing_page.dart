@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'welcome_page.dart';
 
 TextEditingController controller = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+String pw = " ";
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
@@ -68,6 +70,7 @@ class _HomePageState extends State<HomePage> {
 
                   // ],
                   autofocus: true,
+                  autofillHints: [AutofillHints.email],
                   decoration: InputDecoration(
                       icon: Icon(Icons.email_outlined),
                       border: UnderlineInputBorder(),
@@ -79,25 +82,23 @@ class _HomePageState extends State<HomePage> {
                           : null,
                 ),
               ),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     if (_formKey.currentState!.validate()) {
-              //       ScaffoldMessenger.of(context).showSnackBar(
-              //         const SnackBar(content: Text('Processing Data')),
-              //       );
-              //     }
-              //   },
-              //   child: const Text('Submit'),
-              // ),
               Container(
                 margin: EdgeInsets.only(left: 50, right: 30, top: 15),
                 child: TextFormField(
+                  onChanged: (value) => {pw = value},
+                  controller: passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                       icon: Icon(Icons.password_rounded),
                       border: UnderlineInputBorder(),
                       hintText: 'Password',
                       hintStyle: TextStyle(color: Colors.grey)),
+                  // validator: (pw) => pw != null &&
+                  //         pw.length < 6 &&
+                  //         pw.isEmpty &&
+                  //         pw.contains(RegExp(r'[$@#&]'))
+                  //     ? 'Enter the password with atleast 6 characters containing atleast one special character'
+                  //     : null
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter password';
@@ -109,8 +110,13 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(left: 290),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
+                    // final pw = passwordController.value;
+                    if (_formKey.currentState!.validate() &&
+                        pw.length > 6 &&
+                        pw.contains(RegExp(r'[!@#$%&]')) &&
+                        pw.contains(RegExp(r'[A-Za-z]'))) {
                       final email = controller.text;
+                      // final password = controller.value;
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('Your Email is $email')),
                       );
@@ -118,7 +124,11 @@ class _HomePageState extends State<HomePage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => WelcomePage()));
-                    }
+                      print(pw);
+                    } else
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(
+                              'Password should contain minimum of 6 characters, atleast one special character, including both upper and lower case letters')));
                   },
                   child: const Text('Submit'),
                 ),
