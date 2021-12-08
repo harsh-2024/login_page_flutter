@@ -112,51 +112,72 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    Container(
-                      // image: NetworkImage(
-                      //     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
-                      height: 80,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.fitHeight,
-                              image: NetworkImage(
-                                  'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 130,
-                      margin: EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          // image: NetworkImage(
+                          //     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
+                          height: 120,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.fitHeight,
+                                  image: NetworkImage(
+                                      'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 130,
+                          margin:
+                              EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                        ),
+                        Text('Photography')
+                      ],
                     ),
-                    Container(
-                      height: 80,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://media.istockphoto.com/photos/collage-with-michelangelos-david-and-male-portrait-picture-id1188911485?b=1&k=20&m=1188911485&s=170667a&w=0&h=NsfYNU1GotWBFJaoviXq3Ui_rNRRONUUnpNCBJD1IPw=')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 130,
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 120,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://media.istockphoto.com/photos/collage-with-michelangelos-david-and-male-portrait-picture-id1188911485?b=1&k=20&m=1188911485&s=170667a&w=0&h=NsfYNU1GotWBFJaoviXq3Ui_rNRRONUUnpNCBJD1IPw=')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 130,
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Visual Design')
+                      ],
                     ),
-                    Container(
-                      height: 80,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://media.istockphoto.com/photos/laptop-computer-with-books-pen-and-yellow-legal-pad-picture-id92259124?b=1&k=20&m=92259124&s=170667a&w=0&h=6_eHLehWQdrhysXf8c1d3Zae3uTrKLhjMTNpdk5RSj4=')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 130,
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 120,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://media.istockphoto.com/photos/laptop-computer-with-books-pen-and-yellow-legal-pad-picture-id92259124?b=1&k=20&m=92259124&s=170667a&w=0&h=6_eHLehWQdrhysXf8c1d3Zae3uTrKLhjMTNpdk5RSj4=')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 130,
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Popularity')
+                      ],
                     ),
-                    Container(
-                      height: 80,
-                      width: 130,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://media.istockphoto.com/photos/fine-art-abstract-floral-painting-background-picture-id1258336471?b=1&k=20&m=1258336471&s=170667a&w=0&h=9axQbqJmQz3qAGDJEqGWiDLnJ3Thvj55NrhqWcifaFg=')),
-                          borderRadius: BorderRadius.circular(20)),
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 120,
+                          width: 130,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://media.istockphoto.com/photos/fine-art-abstract-floral-painting-background-picture-id1258336471?b=1&k=20&m=1258336471&s=170667a&w=0&h=9axQbqJmQz3qAGDJEqGWiDLnJ3Thvj55NrhqWcifaFg=')),
+                              borderRadius: BorderRadius.circular(20)),
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Art')
+                      ],
                     )
                   ],
                 ),
