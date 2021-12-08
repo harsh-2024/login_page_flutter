@@ -100,9 +100,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   Text(
                     'Categories',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -162,7 +160,75 @@ class _WelcomePageState extends State<WelcomePage> {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Recommended',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 210,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      // image: NetworkImage(
+                      //     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
+                      // height: 100,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')),
+                          borderRadius: BorderRadius.circular(20)),
+                      width: 300,
+                      margin: EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  'https://media.istockphoto.com/photos/watercolor-illustration-of-a-butterfly-picture-id1330461537?b=1&k=20&m=1330461537&s=170667a&w=0&h=B0RE10jSbagGy4Dkp_vg7k8LaRlsRLn7fGDbYF7aJPI=')),
+                          borderRadius: BorderRadius.circular(20)),
+                      width: 300,
+                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  'https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')),
+                          borderRadius: BorderRadius.circular(20)),
+                      width: 300,
+                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    ),
+                    Container(
+                      width: 300,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  'https://media.istockphoto.com/photos/black-acrylic-brush-strokes-picture-id1278669814?b=1&k=20&m=1278669814&s=170667a&w=0&h=YwoefAXbhJzGS569TMMfXetEDJ1uJEMLTpc-B_rSXD4=')),
+                          borderRadius: BorderRadius.circular(20)),
+                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ],
