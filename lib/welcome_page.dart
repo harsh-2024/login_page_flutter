@@ -37,7 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Row(
                 children: [
@@ -50,8 +50,17 @@ class _WelcomePageState extends State<WelcomePage> {
                     radius: 25,
                   ),
                   SizedBox(
-                    width: 180,
+                    width: 100,
                   ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.search_rounded,
+                      color: Colors.black45,
+                      size: 40,
+                    ),
+                  ),
+                  SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
                     child: Icon(
