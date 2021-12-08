@@ -3,12 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-void main() {
-  runApp(HomePage());
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NewPage extends StatelessWidget {
+  const NewPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +107,23 @@ class _WelcomePageState extends State<WelcomePage> {
                     'Categories',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
+                  SizedBox(
+                    width: 190,
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Text(
+                            'More',
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,
+                          )
+                        ],
+                      )),
                 ],
               ),
               SizedBox(
