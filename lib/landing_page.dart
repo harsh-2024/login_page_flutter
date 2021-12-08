@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'welcome_page.dart';
+// import 'welcome_page.dart';
 
 TextEditingController controller = TextEditingController();
 TextEditingController passwordController = TextEditingController();
@@ -25,7 +25,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-  // final _formKey = GlobalKey<FormState>();
 
   @override
   _HomePageState createState() => _HomePageState();
