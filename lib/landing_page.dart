@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'welcome_page.dart';
+import 'welcome_page.dart';
 
 TextEditingController controller = TextEditingController();
 TextEditingController passwordController = TextEditingController();
@@ -119,10 +119,8 @@ class _HomePageState extends State<HomePage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('Your Email is $email')),
                       );
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => WelcomePage()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => NewPage()));
                       print(pw);
                     } else
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
