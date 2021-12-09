@@ -46,34 +46,34 @@ class _WelcomePageState extends State<WelcomePage> {
                     radius: 25,
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 110,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Icon(
                       Icons.search_rounded,
                       color: Colors.black45,
-                      size: 40,
+                      size: 30,
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 5),
                   TextButton(
                     onPressed: () {},
                     child: Icon(
                       Icons.notifications_rounded,
                       color: Colors.black45,
-                      size: 40,
+                      size: 30,
                     ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Icon(
                       Icons.account_circle,
                       color: Colors.black45,
-                      size: 40,
+                      size: 30,
                     ),
                   )
                 ],
@@ -98,6 +98,21 @@ class _WelcomePageState extends State<WelcomePage> {
               SizedBox(
                 height: 40,
               ),
+              Container(
+                margin: EdgeInsets.only(left: 15, right: 15),
+                child: ListTile(
+                  enabled: true,
+                  hoverColor: Colors.blue,
+                  tileColor: Colors.black26,
+                  leading: Icon(Icons.search_rounded),
+                  title: Text('Search your job...'),
+                  trailing: Icon(Icons.add_a_photo_outlined),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
               Row(
                 children: <Widget>[
                   SizedBox(
@@ -121,6 +136,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: Colors.black,
+                            size: 15,
                           )
                         ],
                       )),
@@ -222,52 +238,80 @@ class _WelcomePageState extends State<WelcomePage> {
                 height: 20,
               ),
               SizedBox(
-                height: 210,
+                height: 230,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Container(
-                      // image: NetworkImage(
-                      //     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
-                      // height: 100,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 300,
-                      margin: EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          // image: NetworkImage(
+                          //     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')),
+                          // height: 100,
+                          height: 190,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 300,
+                          margin:
+                              EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                        ),
+                        // SizedBox(
+                        //   height: 20,
+                        // ),
+                        Text('3D/VFX Design')
+                      ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://media.istockphoto.com/photos/watercolor-illustration-of-a-butterfly-picture-id1330461537?b=1&k=20&m=1330461537&s=170667a&w=0&h=B0RE10jSbagGy4Dkp_vg7k8LaRlsRLn7fGDbYF7aJPI=')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 300,
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 190,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://media.istockphoto.com/photos/watercolor-illustration-of-a-butterfly-picture-id1330461537?b=1&k=20&m=1330461537&s=170667a&w=0&h=B0RE10jSbagGy4Dkp_vg7k8LaRlsRLn7fGDbYF7aJPI=')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 300,
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Painting')
+                      ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')),
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 300,
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 190,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')),
+                              borderRadius: BorderRadius.circular(20)),
+                          width: 300,
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Material Designing')
+                      ],
                     ),
-                    Container(
-                      width: 300,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  'https://media.istockphoto.com/photos/black-acrylic-brush-strokes-picture-id1278669814?b=1&k=20&m=1278669814&s=170667a&w=0&h=YwoefAXbhJzGS569TMMfXetEDJ1uJEMLTpc-B_rSXD4=')),
-                          borderRadius: BorderRadius.circular(20)),
-                      margin: EdgeInsets.only(bottom: 10, right: 10),
+                    Column(
+                      children: [
+                        Container(
+                          height: 190,
+                          width: 300,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      'https://media.istockphoto.com/photos/black-acrylic-brush-strokes-picture-id1278669814?b=1&k=20&m=1278669814&s=170667a&w=0&h=YwoefAXbhJzGS569TMMfXetEDJ1uJEMLTpc-B_rSXD4=')),
+                              borderRadius: BorderRadius.circular(20)),
+                          margin: EdgeInsets.only(bottom: 10, right: 10),
+                        ),
+                        Text('Development'),
+                      ],
                     )
                   ],
                 ),
